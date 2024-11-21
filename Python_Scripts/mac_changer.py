@@ -52,12 +52,14 @@ def change_interface(interface):
 
 
 def main():
-    while True:
-        print("Mac Changer in Python ")
-        print("Author: @WearyTravler")
-        chosen_interface = input("Which interface would you like to change: ")
-        print(get_interfaces)
-        #need to write a for loop and assign each discovered interface as a choice to select
-        change_interface(chosen_interface)
+    print("Mac Changer in Python ")
+    print("Author: @WearyTravler")
+    print(get_interfaces())
+    chosen_interface = input("Which interface would you like to change: ")
+    #need to write a for loop and assign each discovered interface as a choice to select
+    change_interface(chosen_interface)
+
+
+main()
 
 
