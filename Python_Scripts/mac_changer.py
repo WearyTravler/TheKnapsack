@@ -49,3 +49,15 @@ def change_interface(interface):
     turn_off = subprocess.run(['ifconfig' + interface + 'down'])
     change_mac = subprocess.run(['ifconfig hw ether' + generate_random_mac])
     turn_on = subprocess.run(['ifconfig' + interface + 'up'])
+
+
+def main():
+    while True:
+        print("Mac Changer in Python ")
+        print("Author: @WearyTravler")
+        chosen_interface = input("Which interface would you like to change: ")
+        print(get_interfaces)
+        #need to write a for loop and assign each discovered interface as a choice to select
+        change_interface(chosen_interface)
+
+
