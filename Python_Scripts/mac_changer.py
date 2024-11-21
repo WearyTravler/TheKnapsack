@@ -38,15 +38,14 @@ def get_interfaces():
 #interfaces = get_interfaces()
 
 def generate_random_mac():
+    #Organizationally Unique Identifier (OUI): The first 24 bits (00:1A:2B in the example) represent the manufacturer of the NIC.
+    #Network Interface Controller (NIC) Specific: The last 24 bits (3C:4D:5E) are unique to the device within the manufacturer’s range.
     mac_parts = [f"{random.randint(0,255):02x}" for _ in range(6)]
     return ":".join(mac_parts)
 
 
 
 def change_interface(interface):
-    
-    #    Organizationally Unique Identifier (OUI): The first 24 bits (00:1A:2B in the example) represent the manufacturer of the NIC.
-    #    Network Interface Controller (NIC) Specific: The last 24 bits (3C:4D:5E) are unique to the device within the manufacturer’s range.
     turn_off = subprocess.run(['ifconfig' + interface + 'down'])
     change_mac = subprocess.run(['ifconfig hw ether' + generate_random_mac])
     turn_on = subprocess.run(['ifconfig' + interface + 'up'])
