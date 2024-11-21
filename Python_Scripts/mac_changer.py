@@ -54,7 +54,11 @@ def change_interface(interface):
 def main():
     print("Mac Changer in Python ")
     print("Author: @WearyTravler")
-    print(get_interfaces())
+    interface_list = get_interfaces()
+    count = 1
+    for x in interface_list:
+        print(count,":",x)
+        count +=1
     chosen_interface = input("Which interface would you like to change: ")
     #need to write a for loop and assign each discovered interface as a choice to select
     change_interface(chosen_interface)
