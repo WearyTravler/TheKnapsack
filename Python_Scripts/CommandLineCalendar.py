@@ -12,6 +12,17 @@ def welcome():
   print("What would you like to do?")
 
 
+
+def view_calendar():
+  if len(calendar.keys()) < 1:
+    print("Man, you have no friends huh? ")
+  else:
+    print("Wow, you've got a lot on your plate! ")
+    print(calendar)
+
+
+
+
 def start_calendar():
   welcome()
   start = True
@@ -23,4 +34,5 @@ def start_calendar():
     D: Delete
     X: Exit""")
     user_choice = user_choice.upper()
+    user_choices = {"V":view_calendar()}
     
