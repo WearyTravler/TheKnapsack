@@ -1,6 +1,6 @@
 from time import sleep,strftime,gmtime
 
-import datetime
+from datetime import datetime
 
 calendar = {}
 #Need to think of adding a json or txt file to read from possibly
