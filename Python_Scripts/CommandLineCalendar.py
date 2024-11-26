@@ -23,16 +23,16 @@ def view_calendar():
 
 #Add Event
 def add_event():
-  None
+  print("Work in progress")
 
 
 #Update Event
 def update_event():
-  None
+  print("Work in progress")
 
 #Delete Event
 def delete_event():
-  None
+  print("Work in progress")
 
 
 #Main
@@ -40,16 +40,32 @@ def start_calendar():
   welcome()
   start = True
   while start == True:
+    user_choices = {"V":view_calendar, 
+                    "A":add_event, 
+                    "U":update_event,
+                    "D":delete_event,
+                    "X":exit}
     user_choice = input("""
     A: Add
     U: Update
     V: View
     D: Delete
-    X: Exit""")
+    X: Exit
+    Input: """)
     user_choice = user_choice.upper()
-    user_choices = {"V":view_calendar(), 
-                    "A":add_event(), 
-                    "U":update_event(),
-                    "D":delete_event(),
-                    "X":exit()}
-    
+    if user_choice == "V":
+      view_calendar()
+    elif user_choice == "A":
+      add_event()
+    elif user_choice == "U":
+      update_event()
+    elif user_choice == "D":
+      delete_event
+    elif user_choice == "X":
+      exit()
+
+
+      
+
+
+start_calendar()
