@@ -1,6 +1,9 @@
 from time import sleep,strftime,gmtime
 
 calendar = {}
+#Need to think of adding a json or txt file to read from possibly
+#integrations with Google/Apple/Outlook
+
 
 #Welcome the User
 def welcome():
@@ -28,7 +31,13 @@ def add_event():
 
 #Update Event
 def update_event():
-  print("Work in progress")
+  date = input("Which date: ")
+  update = input("Enter the update: ")
+  calendar[date] = update
+  print("Update successful...")
+  print(calendar)
+  
+
 
 #Delete Event
 def delete_event():
