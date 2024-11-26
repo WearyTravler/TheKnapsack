@@ -1,5 +1,7 @@
 from time import sleep,strftime,gmtime
 
+import datetime
+
 calendar = {}
 #Need to think of adding a json or txt file to read from possibly
 #integrations with Google/Apple/Outlook
@@ -26,7 +28,19 @@ def view_calendar():
 
 #Add Event
 def add_event():
-  print("Work in progress")
+  event = input("Enter event: ")
+  date = input("Enter date (YYYY-MM-DD): ")
+  try:
+    event_date = datetime.strptime(date, "%Y-%m-%d").date()
+  except ValueError:
+    print("Sorry, that's not the right format!")
+    return
+  
+  today = datetime.today().date()
+  if event_date < today:
+    print("Yo, you Marty McFly or something? Choose something current, my dude.")
+  else:
+    print(f"Event '{event}' has been added for {event_date}.")
 
 
 #Update Event
@@ -36,7 +50,8 @@ def update_event():
   calendar[date] = update
   print("Update successful...")
   print(calendar)
-  
+
+#need to define some type of scheme to save dates
 
 
 #Delete Event
