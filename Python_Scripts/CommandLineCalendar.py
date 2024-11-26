@@ -2,7 +2,7 @@ from time import sleep,strftime,gmtime
 
 calendar = {}
 
-
+#Welcome the User
 def welcome():
   users_name = input("What is your name: ")
   print("Welcome to the Commandline Calendar " + users_name + "! The program is just starting up...")
@@ -12,7 +12,7 @@ def welcome():
   print("What would you like to do?")
 
 
-
+#View Calendar
 def view_calendar():
   if len(calendar.keys()) < 1:
     print("Man, you have no friends huh? ")
@@ -21,8 +21,21 @@ def view_calendar():
     print(calendar)
 
 
+#Add Event
+def add_event():
+  None
 
 
+#Update Event
+def update_event():
+  None
+
+#Delete Event
+def delete_event():
+  None
+
+
+#Main
 def start_calendar():
   welcome()
   start = True
@@ -34,5 +47,9 @@ def start_calendar():
     D: Delete
     X: Exit""")
     user_choice = user_choice.upper()
-    user_choices = {"V":view_calendar()}
+    user_choices = {"V":view_calendar(), 
+                    "A":add_event(), 
+                    "U":update_event(),
+                    "D":delete_event(),
+                    "X":exit()}
     
